@@ -11,19 +11,19 @@ const settings = {
 	},
 	breakPoints: {
 		md: {
-			width: "992px",
+			width: "1020px",
 			fields: "20px"
 		},
 		sm: {
-			width: "768px",
+			width: "720px",
 			fields: "10px"
 		},
 		xs: {
-			width: "480px",
+			width: "576px",
 			fields: "5px"
 		},
 		xxs: {
-			width: "320px",
+			width: "380px",
 			fields: "5px"
 		}
 	},

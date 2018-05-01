@@ -1,7 +1,10 @@
+/*@import "reset" if need this */
+@import "normalize"
 @import "fonts"
 @import "libs"
-@import "smart-grid"
 @import "vars"
+@import "_mixins/mixins"
+@import "smart-grid"
 
 *
 	-webkit-box-sizing: border-box
@@ -51,5 +54,67 @@ body
 	display: block
 	max-width: 100%
 	height: auto
+
+/* menuEight start  ======================================
+
+.menu-button
+	width: 35px
+	height: 30px
+	margin: 10px 10px
+	position: relative
+	cursor: pointer
+	display: inline-block
+	span
+		background-color: #FFF
+		position: absolute
+		border-radius: 2px
+		transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4)
+		width: 100%
+		height: 4px
+		&:nth-child(1)
+			top: 0
+			left: 0
+		&:nth-child(2)
+			top: 13px
+			left: 0
+		&:nth-child(3)
+			bottom: 0
+			left: 0
+	&:not(.clickMenuEight):hover span
+		&:nth-child(1)
+			transform: scaleX(0.8)
+		&:nth-child(2)
+			transform: scaleX(0.5)
+		&:nth-child(3)
+			transform: scaleX(0.8)
+
+.clickMenuEight span
+	&:nth-child(1)
+		top: 13px
+	&:nth-child(2)
+	&:nth-child(3)
+		top: 13px
+
+/* menuEight end  ======================================
+
+/* header start  ==========================================
+
+
+
+/* header end ==========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @import "media" // Всегда в конце
