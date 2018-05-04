@@ -24,6 +24,56 @@ $fields_sm: 10px
 $fields_xs: 5px
 $fields_xxs: 5px
 
+=clearfix()
+	&::after
+		display: block
+		content: ""
+		clear: both
+
+=md($name, $value)
+	@media screen and (max-width: $break_md)
+		#{$name}: $value
+
+=md-block()
+	@media screen and (max-width: $break_md)
+		@content
+
+=sm($name, $value)
+	@media screen and (max-width: $break_sm)
+		#{$name}: $value
+
+=sm-block()
+	@media screen and (max-width: $break_sm)
+		@content
+
+=xs($name, $value)
+	@media screen and (max-width: $break_xs)
+		#{$name}: $value
+
+=xs-block()
+	@media screen and (max-width: $break_xs)
+		@content
+
+=xxs($name, $value)
+	@media screen and (max-width: $break_xxs)
+		#{$name}: $value
+
+=xxs-block()
+	@media screen and (max-width: $break_xxs)
+		@content
+
+=from($min_width)
+	@media screen and (min-width: $min_width)
+		@content
+
+=to($max_width)
+	@media screen and (max-width: $max_width)
+		@content
+
+=from-to($min_width, $max_width)
+	@media screen and (min-width: $min_width) and (max-width: $max_width)
+		@content
+
 =wrapper-full()
 	padding-left: $fields
 	padding-right: $fields
@@ -235,50 +285,6 @@ $fields_xxs: 5px
 	$val: 100% / $columns * $n
 	+xxs(padding-right, #{calc(#{$val} + #{$offset_xxs_one_side})})
 
-=md($name, $value)
-	@media screen and (max-width: $break_md)
-		#{$name}: $value
-
-=md-block()
-	@media screen and (max-width: $break_md)
-		@content
-
-=sm($name, $value)
-	@media screen and (max-width: $break_sm)
-		#{$name}: $value
-
-=sm-block()
-	@media screen and (max-width: $break_sm)
-		@content
-
-=xs($name, $value)
-	@media screen and (max-width: $break_xs)
-		#{$name}: $value
-
-=xs-block()
-	@media screen and (max-width: $break_xs)
-		@content
-
-=xxs($name, $value)
-	@media screen and (max-width: $break_xxs)
-		#{$name}: $value
-
-=xxs-block()
-	@media screen and (max-width: $break_xxs)
-		@content
-
-=from($min_width)
-	@media screen and (min-width: $min_width)
-		@content
-
-=to($max_width)
-	@media screen and (max-width: $max_width)
-		@content
-
-=from-to($min_width, $max_width)
-	@media screen and (min-width: $min_width) and (max-width: $max_width)
-		@content
-
 =reset()
 	body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td
 		margin: 0
@@ -346,9 +352,4 @@ $fields_xxs: 5px
 				outline: $outline
 				background: $background
 
-=clearfix()
-	&::after
-		display: block
-		content: ""
-		clear: both
-	
+
