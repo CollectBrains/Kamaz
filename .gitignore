@@ -3,7 +3,7 @@
 /.idea/
 /.git/
 /app/css/
-/app/img/
+/app/img/video/
 /**/*.psd
 /**/Thumbs.db
 /**/*.DS_Store
