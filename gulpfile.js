@@ -17,14 +17,6 @@ var gulp           = require('gulp'),
 		gcmq           = require('gulp-group-css-media-queries');
 
 
-
-gulp.task('sprite', function () {
-	return gulp.src('app/img/icons/*.svg')
-		.pipe(svgstore({inlineSvg: true}))
-		.pipe(rename('sprite.svg'))
-		.pipe(gulp.dest('app/img/sprite'))
-});
-
 // Пользовательские скрипты проекта
 
 gulp.task('common-js', function() {
@@ -40,7 +32,7 @@ gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/svg4everybody/svg4everybody.legacy.min.js',
-		'app/js/common.min.js', // Всегда в конце
+		'app/js/common.min.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
@@ -53,7 +45,7 @@ gulp.task('browser-sync', function() {
 		server: {
 			baseDir: 'app'
 		},
-		notify: false,
+		notify: false
 		// tunnel: true,
 		// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
 	});
@@ -63,9 +55,9 @@ gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(gcmq())
-	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
+	.pipe(autoprefixer(['last 5 versions']))
+	//.pipe(gcmq())
+	//.pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -80,6 +72,13 @@ gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
 	.pipe(cache(imagemin())) // Cache Images
 	.pipe(gulp.dest('dist/img')); 
+});
+
+gulp.task('sprite', function () {
+	return gulp.src('app/img/icons/*.svg')
+		.pipe(svgstore({inlineSvg: true}))
+		.pipe(rename('sprite.svg'))
+		.pipe(gulp.dest('app/img/sprite'))
 });
 
 gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
