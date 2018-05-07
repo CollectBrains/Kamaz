@@ -114,7 +114,6 @@ body
 	width: 100%
 	height: 120px
 	z-index: 4
-	background-color: $accent
 
 .logo-wrap
 	padding-right: 50px
@@ -146,9 +145,12 @@ body
 		padding: 0
 	&__item
 		display: inline-block
+		transition: all .15s ease-in-out
 		&:hover
 			.nav__link
 				color: $accent
+				&::before
+					display: block
 
 .nav__link
 	position: relative
@@ -163,7 +165,16 @@ body
 	letter-spacing: .2em
 	text-transform: uppercase
 	transition: all .15s ease-in-out
-
+	&::before
+		position: absolute
+		top: calc(50% + 20px)
+		left: calc(50% - 13px)
+		display: none
+		content: ''
+		width: 16px
+		height: 3px
+		background-color: $accent
+		transition: all .15s ease-in-out
 
 // header end ==========================================
 
@@ -171,6 +182,7 @@ body
 
 .content
 	position: relative
+	z-index: 1
 
 .media-hero
 	position: relative
@@ -243,9 +255,62 @@ body
 	height: auto
 	z-index: 0
 
-
 // media-hero end ==========================================
 
+// newsletter start ==========================================
+
+.newsletter
+	background-color: #1f1f1f
+	padding: 100px 20px
+	text-align: center
+	color: #ffffff
+	width: 100%
+	&__wrap
+		width: 100%
+
+.newsletter__heading
+	font-size: 42px
+	text-transform: uppercase
+	letter-spacing: 2.9px
+	line-height: 1.2
+
+.newsletter__subheading
+	font-size: 18px
+	text-transform: uppercase
+	letter-spacing: 1.2px
+	margin-bottom: 20px
+	margin-top: 8px
+
+.form
+	text-align: center
+	input[type='email']
+		color: #828282
+		background-color: #303030
+		font-size: 18px
+		padding: 15px 20px
+		max-width: calc(100% - 50px)
+		border: none!important
+		vertical-align: top
+		outline: none!important
+		letter-spacing: 0.55px
+		width: 485px
+	input[type='submit']
+		position: relative
+		width: 50px
+		height: 50px
+		background-color: #303030
+		cursor: pointer
+		border: none
+
+
+
+
+
+
+
+
+
+// newsletter end ==========================================
 
 
 
