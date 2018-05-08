@@ -50,6 +50,12 @@ body
 	overflow-x: hidden
 	opacity: 1
 
+a, blockquote, h1, h2, h3, h4, h5, h6, p
+	text-rendering: optimizeLegibility
+
+.hidden
+	display: none
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -181,15 +187,18 @@ body
 // media-hero start ==========================================
 
 .content
-	position: relative
-	z-index: 1
+	//position: relative
+	//z-index: 1
 
 .media-hero
-	position: relative
+	position: absolute
+	top: 0
+	left: 0
 	+wrapper
 	width: 100%
 	height: 100vh
-	z-index: 4
+	z-index: 1
+	margin-left: 10vh
 	&__wrap
 		+row-flex
 		height: 100%
@@ -217,7 +226,7 @@ body
 	line-height: 1.8
 	margin-bottom: 30px
 
-.media-hero__link
+.media-hero__link, .link
 	position: relative
 	display: inline-block
 	text-transform: uppercase
@@ -253,7 +262,44 @@ body
 	object-fit: contain
 	width: 100%
 	height: auto
+	max-height: calc(100% - 10px)
+	vertical-align: baseline
 	z-index: 0
+
+.homepage-hero-module
+	border-right: none
+	border-left: none
+	position: relative
+
+.no-video .video-container video, .touch .video-container video
+	display: none
+
+.no-video .video-container .poster, .touch .video-container .poster
+	display: block !important
+
+.video-container
+	position: relative
+	bottom: 0%
+	left: 0%
+	height: 100%
+	width: 100%
+	overflow: hidden
+	background: #000
+	.poster img
+		width: 100%
+		bottom: 0
+		position: absolute
+	.filter
+		z-index: 100
+		position: absolute
+		background: rgba(0, 0, 0, 0.4)
+		width: 100%
+	video
+		position: absolute
+		z-index: 0
+		bottom: 0
+		&.fillWidth
+			width: 100%
 
 // media-hero end ==========================================
 
@@ -283,6 +329,7 @@ body
 
 .form
 	text-align: center
+	position: relative
 	input[type='email']
 		color: #828282
 		background-color: #303030
@@ -294,24 +341,77 @@ body
 		outline: none!important
 		letter-spacing: 0.55px
 		width: 485px
+		&::-moz-focus-inner
+			border: none!important
+			outline: none!important
+		&:focus, &:active
+			border: none !important
+			outline: none !important
+			outline-offset: 0
 	input[type='submit']
 		position: relative
-		width: 50px
-		height: 50px
+		left: -4px
+		width: 54px
+		height: 53px
 		background-color: #303030
 		cursor: pointer
 		border: none
 
-
-
-
-
-
-
-
+.input-wrap
+	position: relative
+	display: inline-block
+	&::before
+		content: '\f105'
+		position: absolute
+		display: inline-block
+		top: 0
+		left: 16px
+		font-family: 'fontello', sans-serif
+		font-size: 30px
+		z-index: 2
+		cursor: pointer
 
 // newsletter end ==========================================
 
+// news start ==========================================
+
+.news
+	padding: 9.5em 3.5em
+
+.wrapper
+	+wrapper
+	text-align: center
+	color: #444
+	max-width: 700px !important
+
+.news__heading
+	font-size: 42px
+	letter-spacing: 4px
+	line-height: 1em
+	text-transform: uppercase
+	margin-bottom: 15px
+	-ms-word-wrap:
+	word-wrap: break-word
+	font-weight: 300
+
+.news__subheading
+	font-size: 18px
+	font-weight: 300
+	letter-spacing: 1.8px
+	line-height: 1.2em
+	text-transform: uppercase
+	word-wrap: break-word
+	margin-bottom: 15px
+
+.news__text
+	font-size: 16.8px
+	line-height: 1.5
+	margin-bottom: 30px
+
+.news__link
+	color: inherit
+
+// news end ==========================================
 
 
 

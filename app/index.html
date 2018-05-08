@@ -78,6 +78,19 @@
 		</nav>
 	</header>
 
+	<div class="homepage-hero-module">
+		<div class="video-container">
+			<div class="filter"></div>
+			<video autoplay loop class="fillWidth">
+				<source src="img/video/kam.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				<source src="img/video/kam.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+			</video>
+			<div class="poster hidden">
+				<img src="img/photo/_bg.jpg" alt="alt">
+			</div>
+		</div>
+	</div>
+
 	<main class="content" role="main">
 		<section class="media-hero">
 			<div class="media-hero__wrap">
@@ -87,18 +100,18 @@
 					<span class="media-hero__country">Bolivia</span>
 					<span class="media-hero__country">Argentina</span>
 					<p class="media-hero__text">Экипаж Эдуарда Николаева стал победителем в грузовом зачете ралли-марафона «Дакар-2018». Еще один российский экипаж – Айрата Мардеева стал бронзовым призером экстремальной гонки стартовавшей 6-го января в столице Перу Лиме и финишировавшей в аргентинской Кордобе 20-го января. Серебро гонки завоевал белорусский гонщик Сергей Вязович (МАЗ).</p>
-					<a href="javascript:void(0);" class="media-hero__link">
+					<a href="javascript:void(0);" class="media-hero__link link">
 						Смотреть полное видео
 					</a>
 				</div>
 			</div>
 		</section>
 
-		<video class="media-video" preload="auto"  loop width="100%" height="100%">
+		<!-- <video class="media-video" preload="auto"  loop>
 			<source src="img/video/kam.mp4" type="video/mp4">
 			<source src="img/video/kam.mp4" type="video/mp4">
 			<source src="img/video/kam.webm" type="video/webm"/>
-		</video>
+		</video> -->
 
 		<section class="newsletter">
 			<div class="newsletter__wrap">
@@ -106,18 +119,21 @@
 				<p class="newsletter__subheading">Подписывайся на нашу рассылку</p>
 				<form class="form">
 					<input type="email" placeholder="Введите email" required>
-					<input type="submit" class="icon-submit">
+					<div class="input-wrap">
+						<input type="submit" class="icon-submit">
+					</div>
 				</form>
 			</div>
 		</section>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br><br>
-		<br>
-		<br><br>
 
+		<section class="news">
+			<div class="wrapper">
+				<h2 class="news__heading">Последние новости</h2>
+				<h5 class="news__subheading">Победителем ралли "Золото Кагана» становится Андрей Каргинов</h5>
+				<p class="news__text"> В Астраханской области завершился второй этап чемпионата России по ралли-рейдам "Золото Кагана-2018". Третий день соревнований включал в себя фирменный «астраханский» микс из песков, жестких кочкарников и быстрых степных дорог с высокими боковыми брустверами и кренами. Этап не преподнес особых сюрпризов для камазовцев.</p>
+				<a href="javascript:void(0);" class="news__link link">Читать новость</a>
+			</div>
+		</section>
 
 
 
