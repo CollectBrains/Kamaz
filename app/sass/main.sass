@@ -457,12 +457,25 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	padding-left: 90px
 	padding-right: 50px
 	margin: auto 0
-	
+	.heading
+		margin-bottom: 10px
+		font-size: 30px
+	.subheading
+		margin-bottom: 15px
+		color: #9b9b9b
+		font-size: 16px
+	.description
+		font-size: 14px
+		margin-bottom: 25px
+		color: #333
+		font-weight: 300
+
 .product__link
 	color: inherit
 
 .content-wrapper
 	display: flex
+	max-width: 1688px
 
 .helmet
 	width: 66%
@@ -475,10 +488,16 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	z-index: 1
 
 .helmet__item
+	position: relative
 	display: inline-block
 	vertical-align: bottom
 	text-align: center
 	width: 32%
+	&:hover
+		.helmet__info
+			visibility: visible
+			opacity: 1
+			transform: translate(-50%, 0)
 
 .helmet__link
 	display: inline-block
@@ -493,7 +512,187 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	padding-left: 15px
 	padding-right: 15px
 
+.helmet__info
+	position: absolute
+	left: 50%
+	transform: translate(-50%, -10px)
+	width: 100%
+	opacity: 0
+	visibility: hidden
+	transition: all .2s ease-in-out
+	z-index: 2
+
+.helmet__title, .helmet__price
+	text-transform: uppercase
+	font-size: 20px
+	line-height: 1.1
+	letter-spacing: 1px
+	text-shadow: -1px -1px 2px #ffffff
+
+.helmet__price
+	line-height: 1.5
+
 // product end ==========================================
+
+// tout start ==========================================
+
+.tout-wrapper
+	display: flex
+
+.tout
+	width: 33.33333%
+	height: 22vw
+	padding: 0
+	overflow: hidden
+	background-color: #1f1f1f
+	color: #ffffff
+	&__link
+		display: table
+		position: relative
+		width: 100%
+		height: 100%
+		overflow: hidden
+		transition: all .2s ease-in-out
+		&:hover
+			.tout__background
+				transform: scale(1.03)
+				&::after
+					background-color: rgba(0,0,0,.25)
+	&__background
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		-webkit-background-size: cover
+		background-size: cover
+		background-position: center center
+		transform: scale(1)
+		transition: transform .4s ease-in-out
+		&::after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transition: background-color .2s ease-in-out
+			background-color: rgba(0,0,0, .15)
+
+.tout__content
+	display: table-cell
+	vertical-align: middle
+	padding: 2em 0
+	max-width: 480px
+	text-align: center
+
+.tout__heading
+	position: relative
+	font-size: 30px
+	font-weight: 300
+	letter-spacing: 3px
+	line-height: 1.2
+	margin-bottom: 15px
+	text-transform: uppercase
+	z-index: 2
+	color: #ffffff
+
+// tout end ============================================
+
+// wear start ============================================
+
+.wear-image
+	width: 66%
+	padding: 60px 30px 0
+
+.wear-text
+	width: 33%
+	padding: 0 50px
+	margin: auto 0
+	.subheading
+		color: #9b9b9b
+	.description
+		margin-bottom: 25px
+
+// wear end ============================================
+
+// inata start ============================================
+
+.insta
+	display: flex
+	width: 100%
+	max-width: 100%
+	position: relative
+
+.insta-large
+	width: 40%
+	height: 40vw
+	overflow: hidden
+	&__link
+		display: block
+		width: 100%
+		height: 100%
+	&__background
+		width: 100%
+		height: 100%
+		-webkit-background-size: cover
+		background-size: cover
+		background-position: 10% 50%
+
+.insta-double
+	width: 60%
+	height: 40vw
+
+.insta-tertiary
+	height: 20vw
+	padding: 3.8em 3em
+	&__left
+		float: left
+		width: 50%
+		max-width: 350px
+	&__right
+		float: right
+		width: 50%
+		color: #333
+		font-size: 16px
+
+.insta-tertiary__subtitle
+	font-size: 18px
+	line-height: 1.4
+	font-weight: 300
+	letter-spacing: 1.8px
+	text-transform: uppercase
+	color: #444
+
+.insta-tertiary__title
+	font-size: 42px
+	line-height: 1.2
+	letter-spacing: 4.2px
+	text-transform: uppercase
+	font-weight: 300
+	color: #444
+
+.insta-tertiary__text
+	line-height: 1.5
+	margin-bottom: 15px
+
+.insta-tertiary__link
+	color: inherit
+
+.insta-secondary
+	display: flex
+	height: 20vw
+	&__link
+		width: 33.33333%
+		height: auto
+	&__background
+		width: 100%
+		height: 100%
+		-webkit-background-size: cover
+		background-size: cover
+
+// insta end ============================================
 
 
 
