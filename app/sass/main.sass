@@ -378,13 +378,13 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 .news
 	padding: 9.5em 3.5em
 
-.wrapper
+.news__wrapper
 	+wrapper
 	text-align: center
 	color: #444
 	max-width: 700px !important
 
-.news__heading
+.news__heading, .heading
 	font-size: 42px
 	letter-spacing: 4px
 	line-height: 1em
@@ -394,7 +394,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	word-wrap: break-word
 	font-weight: 300
 
-.news__subheading
+.news__subheading, .subheading
 	font-size: 18px
 	font-weight: 300
 	letter-spacing: 1.8px
@@ -413,7 +413,87 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 
 // news end ==========================================
 
+// hiring start ==========================================
 
+.hiring
+	display: flex
+
+.half-image
+	width: 50%
+	height: auto
+	background-position: center
+	background-repeat: no-repeat
+	-webkit-background-size: cover
+	background-size: cover
+
+.half-text
+	width: 50%
+	padding: 10em 4em
+	text-align: center
+	text-transform: uppercase
+	background-color: #1f1f1f
+	color: #ffffff
+	overflow-wrap: break-word
+	.heading
+		margin-bottom: 20px
+	.subheading
+		margin-bottom: 20px
+	.description
+		text-transform: none
+		margin-bottom: 30px
+
+// hiring end ==========================================
+
+// product start ==========================================
+
+.product
+	max-width: 1688px
+	padding: 0
+	margin: 0 auto
+	position: relative
+
+.product__text
+	width: 33%
+	padding-left: 90px
+	padding-right: 50px
+	margin: auto 0
+	
+.product__link
+	color: inherit
+
+.content-wrapper
+	display: flex
+
+.helmet
+	width: 66%
+
+.helmet__list
+	display: block
+	list-style-type: none
+	padding: 60px 0
+	position: relative
+	z-index: 1
+
+.helmet__item
+	display: inline-block
+	vertical-align: bottom
+	text-align: center
+	width: 32%
+
+.helmet__link
+	display: inline-block
+	padding-bottom: 50px
+	width: 100%
+	position: relative
+	outline: none
+
+.helmet__img
+	max-width: 100%
+	max-height: 100%
+	padding-left: 15px
+	padding-right: 15px
+
+// product end ==========================================
 
 
 
