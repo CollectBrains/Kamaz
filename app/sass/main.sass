@@ -604,7 +604,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 
 .wear-image
 	width: 66%
-	padding: 60px 30px 0
+	padding: 60px 30px 60px
 
 .wear-text
 	width: 33%
@@ -614,6 +614,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		color: #9b9b9b
 	.description
 		margin-bottom: 25px
+		opacity: .75
 
 // wear end ============================================
 
@@ -633,12 +634,17 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		display: block
 		width: 100%
 		height: 100%
+		&:hover
+			.insta-large__background
+				transform: scale(1.03)
 	&__background
 		width: 100%
 		height: 100%
 		-webkit-background-size: cover
 		background-size: cover
 		background-position: 10% 50%
+		transform: scale(1)
+		transition: all .2s ease-in-out
 
 .insta-double
 	width: 60%
@@ -676,6 +682,9 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 .insta-tertiary__text
 	line-height: 1.5
 	margin-bottom: 15px
+	opacity: .75
+	a
+		opacity: .75
 
 .insta-tertiary__link
 	color: inherit
@@ -686,16 +695,293 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	&__link
 		width: 33.33333%
 		height: auto
+		overflow: hidden
+		&:hover
+			.insta-secondary__background
+				transform: scale(1.03)
 	&__background
 		width: 100%
 		height: 100%
 		-webkit-background-size: cover
 		background-size: cover
+		background-position: 50% 50%
+		transform: scale(1)
+		transition: all .2s ease-in-out
 
 // insta end ============================================
 
+// theme start ============================================
+
+.theme-dark
+	width: 100%
+	padding: 100px 0
+	text-align: center
+	background-color: #1f1f1f
+	color: #ffffff
+	text-transform: uppercase
+	&__title
+		font-size: 160px
+		line-height: 1.4
+		font-weight: 300
+		letter-spacing: .125em
+		color: #ffffff
+	&__subtitle
+		font-size: 18px
+		letter-spacing: 1.8px
+		font-weight: 300
+		color: #9b9b9b
+		line-height: 1
+	&__divider
+		display: inline-block
+		position: relative
+		top: 1px
+		width: 1px
+		height: 100px
+		background-color: #666
+		margin-top: 50px
+
+// theme end ============================================
+
+// entries start ============================================
+
+.bg-overlay
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,.3)
+		transition: all .2s ease-in-out
+	&:hover
+		&::before
+			background-color: rgba(0,0,0,.4)
+
+.entries
+	position: relative
+	width: 100%
+	height: 62.5vw
+	display: flex
+	&__large
+		position: relative
+		width: 50%
+		height: 100%
+		-webkit-background-size: cover
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		overflow: hidden
+	&__double
+		width: 50%
+		height: 100%
+		background-color: #1f1f1f
+		overflow: hidden
+
+.entries__small
+	&--top
+		position: relative
+		top: 0
+		left: 0
+		display: block
+		width: 100%
+		height: 50%
+		-webkit-background-size: cover
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		z-index: 1
+	&--bottom
+		position: relative
+		left: 0
+		bottom: 0
+		display: block
+		width: 100%
+		height: 50%
+		-webkit-background-size: cover
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		z-index: 1
+
+.entries
+	&__info
+		position: absolute
+		left: 0
+		bottom: 0
+		padding: 0 50px 80px
+		text-align: left
+		text-transform: uppercase
+		color: #ffffff
+	&__title
+		font-size: 42px
+		font-weight: 300
+		letter-spacing: 4px
+		line-height: 1
+		opacity: 1
+		margin-bottom: 8px
+	&__subtitle
+		font-size: 20px
+		font-weight: 300
+		letter-spacing: 3px
+		line-height: 1.2
+		opacity: .6
+
+// entries end ============================================
+
+// footer start ============================================
+
+.main-footer
+	width: 100%
+	display: block
+	&__wrapper
+		width: 1120px
+		position: relative
+		padding-left: 30px
+		padding-right: 30px
+		margin: 0 auto
+		+clearfix
+	&__nav
+		padding-top: 100px
+		padding-bottom: 100px
+		+clearfix
+
+.footer__title, .footer__title > a
+	color: $accent
+	font-size: 14.4px
+	font-weight: 600
+	letter-spacing: 0.5px
+	line-height: 21px
+	margin-bottom: 20px
+	margin-top: 0
+	text-transform: uppercase
+	transition: color .2s ease-in-out
+	&:hover
+		color: darken($accent, 5%)
+
+.footer-newsletter
+	width: 280px
+	float: right
+	&__title
+		color: #000
+		font-size: 30px
+		font-weight: 300
+		line-height: 1.2
+		letter-spacing: 3.5px
+		text-transform: uppercase
+		margin-bottom: 40px
+	&__underline
+		width: 100%
+		height: 6px
+		margin-top: 8px
+		background-color: #000
+
+.footer__input
+	width: 230px
+	border: 2px solid #ffffff
+	font-size: 18px
+	font-weight: 400
+	line-height: 20px
+	color: #000
+
+.footer__submit
+	color: $accent
+	float: right
+	padding: 3px 0
+	border: none
+	outline: none
+	background-color: transparent
+	cursor: pointer
+	font-size: 14px
+	font-weight: 400
+	letter-spacing: 1.2px
+	line-height: 1.2
+
+.footer-nav
+	float: left
+	&__list
+		float: left
+		width: 155px
+		padding-left: 0
+		margin-right: 15px
+		list-style-type: none
+	&__item
+		float: left
+		width: 100%
+		margin-right: 22px
+	&__link
+		display: inline-block
+		font-size: 16px
+		line-height: 1.5
+		margin-bottom: 5px
+		color: #888
+		outline: none
+		transition: color .2s ease-in-out
+		&:hover
+			color: #000
+
+.main-footer__info
+	position: relative
+	width: 100%
+	min-height: 100px
+	margin-bottom: 100px
+
+.footer-info__logo
+	height: 36px
+	width: 120px
+	display: inline-block
+	margin-bottom: 15px
+	overflow: hidden
+	span
+		position: relative
+		display: block
+		height: 36px
+		background-position: center
+		-webkit-background-size: cover
+		background-size: cover
+		z-index: 3
+
+.footer-info
+	&__list
+		float: right
+		height: 36px
+		margin-bottom: 15px
+		list-style-type: none
+	&__item
+		display: inline-block
+		margin-right: 10px
+		&:hover
+			[class*='icon']
+				color: $accent
+	&__link
+		height: 18px
+		vertical-align: top
+		[class*='icon']
+			font-size: 16px
+			transition: color .2s ease-in-out
+
+.footer-info
+	&__legal
+		float: right
+		clear: right
+		margin-top: 8px
+		a
+			position: relative
+			font-size: 14px
+			color: #4a4a4a
+			line-height: 1.5
+			display: inline-block
+		.divider
+			position: relative
+			display: inline-block
+			top: 1px
+			width: 2px
+			height: 10px
+			margin: 0 5px
+			background-color: #000
 
 
+// footer end ============================================
 
 
 
