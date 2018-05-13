@@ -1,5 +1,37 @@
 $(function() {
 
+	$(".overlay-close").on("mouseover", function () {
+		$(".overlay").fadeOut(300);
+	});
+
+	$(document).on('scroll', function () {
+		if($(document).scrollTop() >= 5) {
+			$('.main-header').addClass('top');
+		}
+		else {
+			$('.main-header').removeClass('top');
+		}
+	});
+
+	$("#crew").on( "mouseenter",( function () {
+		$(".overlay.crew").fadeIn(300)}));
+	$("#crew").on("mouseleave", function () {
+		$(".overlay.crew").fadeOut(300);
+	});
+
+	$("#auto").on( "mouseenter",( function () {
+		$(".overlay.auto").fadeIn(300)}));
+	$("#auto").on("mouseleave", function () {
+		$(".overlay.auto").fadeOut(300);
+	});
+
+	$("#master").on( "mouseenter",( function () {
+		$(".overlay.master").fadeIn(300)}));
+	$("#master").on("mouseleave", function () {
+		$(".overlay.master").fadeOut(300);
+	});
+
+
 	var menuEight = document.querySelector('.menu-button');
 
 	function addClassFunEight(){
