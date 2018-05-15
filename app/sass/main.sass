@@ -360,7 +360,6 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		[class*='icon']
 			color: #ffffff
 
-
 // overlay end ============================================
 
 // media-hero start ==========================================
@@ -373,7 +372,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	position: absolute
 	top: 0
 	left: 0
-	+wrapper
+	+wrapper-full
 	width: 100%
 	height: 100vh
 	z-index: 1
@@ -383,15 +382,18 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		height: 100%
 	&__center
 		+size(6)
+		max-width: 550px
 		align-items: center
 		align-self: center
 		color: #ffffff
+		text-shadow: 2px 2px 1px #0C0C80
 
 .media-hero__title
 	font-size: 70px
 	text-transform: uppercase
 	line-height: 1.1
-
+	span
+		color: #a64a4a
 
 .media-hero__country
 	font-size: 28px
@@ -1162,11 +1164,5 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 			background-color: #000
 
 // footer end ============================================
-
-
-
-
-
-
 
 @import "media" // Всегда в конце

@@ -13,6 +13,10 @@ $(function() {
 		}
 	});
 
+	$(".menu-link").on("click", function () {
+		$(".overlay.primary").fadeToggle(300);
+	});
+
 	$("#crew").on( "mouseenter",( function () {
 		$(".overlay.crew").fadeIn(300)}));
 	$("#crew").on("mouseleave", function () {
