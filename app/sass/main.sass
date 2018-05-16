@@ -120,7 +120,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	top: 0
 	left: 0
 	width: 100%
-	height: 120px
+	height: em(120)
 	z-index: 10
 	transition: all .2s ease
 
@@ -142,7 +142,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 
 .logo-wrap
 	padding-right: 50px
-	width: 230px
+	width: 172px
 	height: 120px
 	overflow: hidden
 	cursor: pointer
@@ -154,7 +154,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	z-index: 11
 	img
 		width: 230px
-		height: 120px
+		height: 100px
 
 .main-nav
 	position: relative
@@ -162,6 +162,9 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 
 .nav
 	display: flex
+	justify-content: space-between
+	max-width: 100%
+	width: 100%
 	align-items: center
 	height: 120px
 	&__list
@@ -176,6 +179,17 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 				color: $accent
 				&::before
 					display: block
+
+.nav__list.left
+	align-self: flex-start
+
+.nav__list.right
+	align-items: flex-end
+	.nav__item:last-child
+		&:hover
+			.nav__link
+				&::before
+					left: calc(50% - 9px)
 
 .nav__link
 	position: relative
@@ -201,6 +215,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		z-index: 11
 		background-color: $accent
 		transition: all .15s ease-in-out
+
 
 // header end ==========================================
 
@@ -466,6 +481,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	width: 100%
 	overflow: hidden
 	background: #000
+	z-index: 1
 	.poster img
 		width: 100%
 		bottom: 0
@@ -1164,5 +1180,72 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 			background-color: #000
 
 // footer end ============================================
+
++to(1292px)
+	.nav__link
+		padding-left: 15px
+		padding-right: 15px
+	.logo-wrap
+		padding-right: 0
+	.overlay.primary .mega-menu
+		width: 95%
+	.mega-menu-mobile__list
+		padding-right: 80px
+
++to(1200px)
+	.overlay.primary .mega-menu
+		margin-bottom: 50px
+	.overlay__container .mega-menu-mobile
+		width: 100%
+		&__list
+			padding-right: 0
+			margin-bottom: 0
+			justify-content: center
+		&__item
+			padding: 0 10px 10px 10px
+		&--right
+			float: none
+			margin: 0 auto
+
++to(930px)
+	.nav__list.right
+		.nav__item:first-child
+			display: none
+	.media-hero__center
+		width: 100%
+
++to(775px)
+	.nav__list.left
+		display: none
+	.nav__list.right
+		margin-left: auto
+
++to(670px)
+	.media-hero__center
+		width: 80vw
+
++to(580px)
+	.media-hero
+		&__title
+			font-size: 50px
+		&__country
+			font-size: 18px
+
++to(450px)
+	.media-hero
+		margin-left: 10vw
+	.media-hero__text
+		display: none
+
++to(370px)
+	.media-hero
+		&__title
+			font-size: 43px
+		&__country
+			font-size: 16px
+		&__link
+			span
+				display: none
+
 
 @import "media" // Всегда в конце

@@ -124,4 +124,15 @@
 =jpg($name)
 	background: url("../img/#{$name}.jpg?ver1.0") no-repeat 0 0
 	//background-image: inline-image("#{$name}.jpg",'image/jpg')
-	+image-size("img/#{$name}.jpg")		
+	+image-size("img/#{$name}.jpg")
+
+$browser-context: 16
+@function em($pixels, $context: $browser-context)
+	@if (unitless($pixels))
+		$pixels: $pixels * 1px
+
+	@if (unitless($context))
+		$context: $context * 1px
+
+	@return $pixels / $context * 1em
+
