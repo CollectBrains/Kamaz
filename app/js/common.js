@@ -13,8 +13,6 @@ $(function() {
 		}
 	});
 
-
-
 	$("#crew").on( "mouseenter",( function () {
 		$(".overlay.crew").fadeIn(300)}));
 	$("#crew").on("mouseleave", function () {
@@ -43,8 +41,6 @@ $(function() {
 			$(".overlay.mobile").fadeToggle(300);
 		});
 	}
-
-
 
 	var menuEight = document.querySelector('.menu-button');
 
