@@ -61,11 +61,11 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	max-width: 100%
 	height: auto
 
-/* menuEight start  ======================================
+// menuEight start  ======================================
 
 .menu-link
 	position: relative
-	z-index: 11
+	z-index: 15
 	height: 120px
 	padding-right: 30px
 	padding-left: 30px
@@ -120,7 +120,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	top: 0
 	left: 0
 	width: 100%
-	height: em(120)
+	height: 120px
 	z-index: 10
 	transition: all .2s ease
 
@@ -151,7 +151,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	position: relative
 	display: block
 	width: 100%
-	z-index: 11
+	z-index: 15
 	img
 		width: 230px
 		height: 100px
@@ -163,6 +163,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 .nav
 	display: flex
 	justify-content: space-between
+	flex-shrink: 1
 	max-width: 100%
 	width: 100%
 	align-items: center
@@ -342,6 +343,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 			width: 33.3333%
 
 .overlay.primary
+	z-index: 13
 	&::before
 		background: #000
 	.mega-menu
@@ -374,6 +376,37 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		margin-left: 30px
 		[class*='icon']
 			color: #ffffff
+
+.overlay.mobile
+	text-align: center
+	z-index: 2
+	overflow: hidden
+	.mobile
+		text-align: center
+		&__list
+			list-style-type: none
+			display: block
+			align-items: center
+		&__item
+		&__link
+			display: block
+			color: #ffffff
+			font-size: 28px
+			line-height: 1.4
+			padding: 16px 0
+			font-weight: bold
+			letter-spacing: 2px
+			transition: all .15s ease-in-out
+			&:hover
+				color: $accent
+	.overlay__container
+		flex-direction: column
+		height: 70vh
+
+	&::before
+		background-color: #000
+
+
 
 // overlay end ============================================
 
@@ -532,7 +565,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		background-color: #303030
 		font-size: 18px
 		padding: 15px 20px
-		max-width: calc(100% - 50px)
+		max-width: calc(100% - 60px)
 		border: none!important
 		vertical-align: top
 		outline: none!important
@@ -889,6 +922,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 .insta-secondary
 	display: flex
 	height: 20vw
+	width: 100%
 	&__link
 		width: 33.33333%
 		height: auto
@@ -1188,7 +1222,7 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	.logo-wrap
 		padding-right: 0
 	.overlay.primary .mega-menu
-		width: 95%
+		width: 100%
 	.mega-menu-mobile__list
 		padding-right: 80px
 
@@ -1206,6 +1240,62 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		&--right
 			float: none
 			margin: 0 auto
+	.half-text
+		.heading
+			font-size: 30px
+		.subheading
+			font-size: 17px
+	.wear-image
+		width: 60%
+	.wear-text
+		width: 40%
+
++to(1100px)
+	.insta-tertiary
+		padding: 10px 10px
+
++to(1000px)
+	.overlay.crew
+		.mega-menu
+			width: 100%
+			&__callout
+				display: none
+	.overlay.master, .overlay.auto
+		.mega-menu
+			&__list
+				padding-left: 15px
+			&__callout
+				.callout__heading
+					font-size: 28px
+	.product__text
+		padding-left: 20px
+		padding-right: 20px
+	.tout-wrapper
+		flex-direction: column
+		.tout
+			width: 100%
+			height: 56.25vw
+	.wear
+		.content-wrapper
+			flex-direction: column
+		.wear-image
+			width: 100%
+		.wear-text
+			width: 100%
+			text-align: center
+			margin-bottom: 40px
+			max-width: 600px
+			margin-left: auto
+			margin-right: auto
+	.insta-tertiary
+		&__text
+			display: none
+		&__left
+			width: 100%
+			margin-bottom: 10px
+		&__right
+			float: left
+
 
 +to(930px)
 	.nav__list.right
@@ -1213,16 +1303,92 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 			display: none
 	.media-hero__center
 		width: 100%
+	.overlay.master, .overlay.auto
+		.mega-menu
+			&__callout
+				.callout__heading
+					font-size: 22px
+	.half-text
+		padding: 6em 2em
+		.heading
+			font-size: 30px
+		.subheading
+			font-size: 17px
+
+
 
 +to(775px)
 	.nav__list.left
 		display: none
 	.nav__list.right
 		margin-left: auto
+	.hiring
+		flex-direction: column
+		height: auto
+	.half-image
+		width: 100%
+		height: auto
+		padding: 6em 2em
+	.half-text
+		width: 100%
+		.heading
+			font-size: 30px
+		.subheading
+			font-size: 17px
+	.product
+		.content-wrapper
+			flex-direction: column
+		.product__text
+			width: 100%
+			max-width: 600px
+			padding: 0 1em
+			margin-left: auto
+			margin-right: auto
+			order: 2
+			text-align: left
+			margin-bottom: 40px
+		.helmet
+			width: 100%
+			order: 1
+			margin-bottom: 20px
+	.insta
+		flex-direction: column
+		.insta-large
+			width: 100%
+			height: 90vw
+		.insta-double
+			width: 100%
+			height: auto
+		.insta-tertiary
+			margin-top: 25px
+			&__text
+				display: block
+			&__right
+				width: 100%
+				padding-bottom: 25px
+
 
 +to(670px)
 	.media-hero__center
 		width: 80vw
+	.newsletter
+		&__heading
+			font-size: 30px
+		&__subheading
+			font-size: 16px
+	.news
+		padding-top: 5em
+		padding-bottom: 5em
+		&__heading
+			font-size: 30px
+		&__subheading
+			font-size: 16px
+		&__text
+			font-size: 14px
+		&__link
+			font-size: 16px
+	.insta-secondary
+		height: 33vw
 
 +to(580px)
 	.media-hero
@@ -1230,12 +1396,64 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 			font-size: 50px
 		&__country
 			font-size: 18px
+	.helmet
+		&__title
+			font-size: 16px
+		&__price
+			font-size: 16px
+	.wear
+		.wear-text
+			.heading
+				font-size: 30px
+			.subheading
+				font-size: 17px
+
 
 +to(450px)
 	.media-hero
 		margin-left: 10vw
 	.media-hero__text
 		display: none
+	.nav
+		flex-shrink: 2
+	.overlay.mobile
+		.mobile__link
+			font-size: 22px
+	.news
+		padding-left: 1em
+		padding-right: 1em
+		&__heading
+			font-size: 26px
+		&__subheading
+			font-size: 15px
+		&__text
+			font-size: 14px
+		&__link
+			font-size: 16px
+	.half-text
+		padding: 5em 1em
+		.heading
+			font-size: 26px
+		.subheading
+			font-size: 16px
+		.description
+			font-size: 14px
+	.product
+		.helmet
+			margin-bottom: 0
+		&__text
+			.heading
+				font-size: 25px
+	.tout-wrapper
+		.tout__heading
+			font-size: 25px
+	.wear
+		.wear-text
+			padding: 0 20px
+		.description
+			font-size: 14px
+
+
 
 +to(370px)
 	.media-hero
@@ -1246,6 +1464,9 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 		&__link
 			span
 				display: none
+	.product
+		.helmet__list
+			padding-bottom: 30px
 
 
 @import "media" // Всегда в конце
