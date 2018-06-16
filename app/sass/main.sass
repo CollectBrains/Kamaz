@@ -5,6 +5,7 @@
 @import "vars"
 @import "_mixins/mixins"
 @import "smart-grid"
+@import "preloader"
 
 *
 	-webkit-box-sizing: border-box
@@ -60,6 +61,11 @@ a, blockquote, h1, h2, h3, h4, h5, h6, p
 	display: block
 	max-width: 100%
 	height: auto
+
+.transition-loader
+	z-index: 9999
+.transition-loader-inner
+	z-index: 9999
 
 // menuEight start  ======================================
 

@@ -1,3 +1,11 @@
+$(window).on('load', function () {
+	$preloader = $('.transition-loader');
+	$loader = $preloader.find('.transition-loader-inner');
+	//$loader.fadeOut();
+	$preloader.delay(350).fadeOut('slow');
+
+});
+
 $(function() {
 
 	$(".overlay-close").on("mouseover", function () {
@@ -113,5 +121,6 @@ function scaleBannerVideoSize(element){
 
 	});
 }
+
 
 
